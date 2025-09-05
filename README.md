@@ -17,6 +17,7 @@ This repository accompanies the experiments and figures presented in the related
 ├── figures/       # Figures generated for the paper
 ├── environment.yml
 ├── config/         # Contains api_keys.json
+├── ground_truth_sum_analysis_results/ # Includes an Excel sheet summarizing the ground truth and analyzing the results
 ```
 
 ### 1. `data/`
