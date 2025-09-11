@@ -1,4 +1,4 @@
-# Requirements Change for Process Compliance (RC4PC)
+# Requirements Change for Business Process Compliance (RC4PC)
 Impact Analysis of Regulatory Requirement Changes on Business Process Compliance
 
 
