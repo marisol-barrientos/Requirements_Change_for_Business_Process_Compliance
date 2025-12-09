@@ -92,17 +92,12 @@ IMPORTANT RULES:
    - If versions differ only in parameter values, keep the exact same structure — same compliance_pattern, nesting (e.g., precondition vs norms), and element names.
    - Do not switch between patterns like data_in_range ↔ data_in_domain unless the semantics change.
 
-4. **Norms Temporal Attributes**
-   - If a norm is marked as "achievement": set "persistent" to 1
-   - If a norm is "preemptive": set "achievement" and "persistent" to 1
-   - If no info is provided: set all to 0
-
-5. **Temporal Validity Defaults**
+4. **Temporal Validity Defaults**
    - If the requirement does not specify a start/end: set
      - "start": "0000-01-01T00:00:00Z"
      - "end": "9999-12-31T23:59:59Z"
 
-6. **Semantics of Norms**
+5. **Semantics of Norms**
    - What is not obligated is by default considered permitted but not prohibited.
    - Only actions explicitly indicated as prohibited are treated as "prohibition".
    - Therefore, absence of an "obligation" does not imply prohibition.

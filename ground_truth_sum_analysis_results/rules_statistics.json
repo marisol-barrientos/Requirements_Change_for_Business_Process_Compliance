@@ -1,0 +1,57 @@
+{
+  "summary": {
+    "total_rules": 20,
+    "both_versions_count": 2,
+    "separate_versions_count": 18,
+    "rules_with_version_differences": 16
+  },
+  "version_analysis": {
+    "both_versions_percentage": 10.0
+  },
+  "norm_analysis": {
+    "total_norms": 34,
+    "type_distribution": {
+      "obligation": 26,
+      "permission": 4,
+      "prohibition": 4
+    },
+    "most_common_norm": [
+      "obligation",
+      26
+    ]
+  },
+  "precondition_analysis": {
+    "has_precondition_percentage": 37.5,
+    "operator_distribution": {
+      "AND": 7,
+      "OR": 2,
+      "NOT": 1
+    },
+    "action_distribution": {
+      "data_in_domain": 6,
+      "data_in_range": 4,
+      "existence_of_A": 3,
+      "duration": 2
+    },
+    "precondition_parameters": {
+      "existence_of_A": 1
+    }
+  },
+  "parameter_analysis": {
+    "total_unique_parameters": 8,
+    "parameter_frequency": {
+      "existence_of_A": 12,
+      "A_precedes_B": 10,
+      "performed_by": 6,
+      "A_immediately_followed_by_B": 4,
+      "A_followed_by_B": 3,
+      "duration": 2,
+      "periodicity": 1,
+      "validity_period": 1
+    },
+    "most_common_parameter": [
+      "existence_of_A",
+      12
+    ],
+    "parameter_combinations": {
+      

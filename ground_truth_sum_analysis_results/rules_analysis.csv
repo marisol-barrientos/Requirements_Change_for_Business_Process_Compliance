@@ -1,0 +1,39 @@
+id,version,precondition_action,precondition_operator,precondition_count,norm_type,norm_count,parameters,has_precondition
+r1,both,data_in_domain,AND,2.0,obligation,1.0,periodicity,True
+r2,both,,,,obligation,4.0,"A_precedes_B, performed_by",False
+r3,version_1,data_in_range,,1.0,obligation,3.0,"performed_by, A_precedes_B, validity_period",True
+r3,version_2,data_in_range,OR,2.0,obligation,2.0,"performed_by, A_precedes_B",True
+r4,version_1,,,,obligation,1.0,A_precedes_B,False
+r4,version_2,existence_of_A,NOT,1.0,obligation,1.0,A_precedes_B,True
+r5,version_1,,,,obligation,2.0,A_precedes_B,False
+r5,version_2,,,,permission,2.0,A_precedes_B,False
+r6,version_1,,,,obligation,1.0,existence_of_A,False
+r6,version_2,data_in_domain,,1.0,obligation,1.0,existence_of_A,True
+r7,version_1,,,,obligation,1.0,A_immediately_followed_by_B,False
+r7,version_2,,,,obligation,1.0,A_followed_by_B,False
+r8,version_1,,,,permission,1.0,duration,False
+r8,version_2,,,,obligation,1.0,duration,False
+r9,version_1,,,,,,,False
+r9,version_2,,,,obligation,1.0,A_followed_by_B,False
+r10,version_1,existence_of_A,AND,1.0,obligation,1.0,performed_by,True
+r10,version_2,existence_of_A,AND,1.0,obligation,1.0,performed_by,True
+r11,version_1,,,,permission,1.0,existence_of_A,False
+r11,version_2,,,,obligation,2.0,"A_precedes_B, performed_by",False
+r12,version_1,data_in_domain,AND,1.0,obligation,1.0,existence_of_A,True
+r12,version_2,,,,,,,False
+r13,version_1,data_in_range,AND,1.0,prohibition,1.0,existence_of_A,True
+r13,version_2,data_in_range,AND,1.0,prohibition,1.0,existence_of_A,True
+r14,version_1,data_in_domain,,1.0,obligation,1.0,A_precedes_B,True
+r14,version_2,,,,obligation,1.0,A_precedes_B,False
+r15,version_1,,,,obligation,2.0,A_immediately_followed_by_B,False
+r15,version_2,,,,obligation,1.0,A_immediately_followed_by_B,False
+r16,version_1,,,,obligation,1.0,A_followed_by_B,False
+r16,version_2,,,,,,,False
+r17,version_1,duration,,2.0,obligation,2.0,existence_of_A,True
+r17,version_2,duration,,1.0,obligation,1.0,existence_of_A,True
+r18,version_1,,,,,,,False
+r18,version_2,,,,obligation,1.0,A_immediately_followed_by_B,False
+r19,version_1,,,,permission,2.0,existence_of_A,False
+r19,version_2,,,,obligation,2.0,existence_of_A,False
+r20,version_1,data_in_domain,OR,2.0,prohibition,1.0,existence_of_A,True
+r20,version_2,data_in_domain,AND,2.0,prohibition,1.0,existence_of_A,True
