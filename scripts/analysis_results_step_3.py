@@ -3,7 +3,7 @@ import re
 from collections import defaultdict
 
 # === Step 1: Load data from Excel file ===
-file_path = "/home/marisolbarrientosmoreno/Desktop/ER_2025/repo/Requirements_Change_for_Business_Process_Compliance/ground_truth_sum_analysis_results/analysis_results_step_3.xlsx"  # Adjust path if needed
+file_path = "/home/marisolbarrientosmoreno/Desktop/ER_2025/repo/Requirements_Change_for_Business_Process_Compliance/evaluation/analysis_of_results/to_analyze/results_step_3.xlsx"  # Adjust path if needed
 df = pd.read_excel(file_path)
 
 # === Step 2: Helper to extract TP, FP, FN ===
@@ -92,7 +92,7 @@ agg_per_scenario.columns = ['_'.join(col).strip() for col in agg_per_scenario.co
 agg_per_scenario = agg_per_scenario.reset_index()
 
 # === Step 9: Save all three to Excel ===
-output_file = "analysis_results_step_3.xlsx"
+output_file = "/home/marisolbarrientosmoreno/Desktop/ER_2025/repo/Requirements_Change_for_Business_Process_Compliance/evaluation/analysis_of_results/analyzed/analyzed_results_step_3.xlsx"
 with pd.ExcelWriter(output_file, engine='openpyxl') as writer:
     metrics_per_exec.to_excel(writer, sheet_name="Per Scenario Execution", index=False)
     agg_per_execution.to_excel(writer, sheet_name="Aggregated Per Execution", index=False)

@@ -3,7 +3,7 @@ import re
 from collections import defaultdict
 
 # === Step 1: Load the Excel file ===
-file_path = "/home/marisolbarrientosmoreno/Desktop/ER_2025/repo/Requirements_Change_for_Business_Process_Compliance/ground_truth_sum_analysis_results/analysis_results_step_1.xlsx"
+file_path = "/home/marisolbarrientosmoreno/Desktop/ER_2025/repo/Requirements_Change_for_Business_Process_Compliance/evaluation/analysis_of_results/to_analyze/results_step_1.xlsx"
 df = pd.read_excel(file_path)
 
 # === Step 2: Assign scenario based on requirement_id ===
@@ -105,7 +105,7 @@ for target in ["precondition", "norm"]:
 # === Step 7: Save to Excel ===
 results_df = pd.DataFrame(results)
 
-output_path = "/home/marisolbarrientosmoreno/Desktop/ER_2025/repo/Requirements_Change_for_Business_Process_Compliance/ground_truth_sum_analysis_results/analysis_results_step_1.xlsx"
+output_path = "/home/marisolbarrientosmoreno/Desktop/ER_2025/repo/Requirements_Change_for_Business_Process_Compliance/evaluation/analysis_of_results/analyzed/analyzed_results_step_1.xlsx"
 with pd.ExcelWriter(output_path, engine='openpyxl') as writer:
     results_df[results_df["Scenario"] != "ALL"].to_excel(writer, sheet_name="Per Scenario", index=False)
     results_df[results_df["Scenario"] == "ALL"].to_excel(writer, sheet_name="Global Totals", index=False)
