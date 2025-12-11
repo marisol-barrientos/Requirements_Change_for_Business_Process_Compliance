@@ -13,7 +13,7 @@
                 "integer"
               ],
               "value": [
-                "65+"
+                "66-"
               ]
             }
           ]
@@ -27,14 +27,39 @@
         "modality": "obligation",
         "action": {
           "dimension": "control_flow",
-          "compliance_pattern": "precedence_within_time",
+          "compliance_pattern": "A_precedes_B",
+          "activities": [
+            "nurse_approves_discharge",
+            "patient_discharged"
+          ]
+        }
+      },
+      {
+        "modality": "obligation",
+        "action": {
+          "dimension": "resource",
+          "compliance_pattern": "performed_by",
+          "activities": [
+            "nurse_approves_discharge"
+          ],
+          "resources": [
+            "nurse"
+          ]
+        }
+      },
+      {
+        "modality": "obligation",
+        "action": {
+          "dimension": "time",
+          "compliance_pattern": "time_lag",
           "activities": [
             "nurse_approves_discharge",
             "patient_discharged"
           ],
           "temporal_constraints": [
             {
-              "interval_minutes": 1440
+              "interval_minutes": 1440,
+              "direction": "before"
             }
           ]
         }
@@ -59,7 +84,10 @@
             {
               "element": "patient_age",
               "domain": [
-                ">65"
+                "integer"
+              ],
+              "value": [
+                65
               ]
             }
           ]
@@ -71,7 +99,10 @@
             {
               "element": "medication_count",
               "domain": [
-                ">5"
+                "integer"
+              ],
+              "value": [
+                5
               ]
             }
           ]
@@ -84,7 +115,7 @@
         "modality": "obligation",
         "action": {
           "dimension": "control_flow",
-          "compliance_pattern": "activity_precedes",
+          "compliance_pattern": "A_precedes_B",
           "activities": [
             "doctor_approves_discharge",
             "patient_discharged"

@@ -8,10 +8,9 @@
       "element": "action",
       "old": {
         "dimension": "control_flow",
-        "compliance_pattern": "before",
+        "compliance_pattern": "existence_of_A",
         "activities": [
-          "surgery",
-          "blood_analysis"
+          "surgery"
         ]
       },
       "change_id": "r4_c1"
@@ -21,32 +20,25 @@
       "element": "action",
       "new": {
         "dimension": "control_flow",
-        "compliance_pattern": "activity_performed",
+        "compliance_pattern": "existence_of_A",
         "activities": [
-          "doctor_authorize_skipping_blood_analysis"
+          "doctor_authorize_skip_blood_analysis"
         ]
       },
       "change_id": "r4_c2"
     },
     {
-      "change": "switch_compliance_pattern",
-      "element": "compliance_pattern",
-      "old": "before",
-      "new": "activity_precedes",
-      "change_id": "r4_c3"
-    },
-    {
       "change": "modify_activities",
       "element": "activities",
       "old": [
-        "surgery",
-        "blood_analysis"
-      ],
-      "new": [
         "blood_analysis",
         "surgery"
       ],
-      "change_id": "r4_c4"
+      "new": [
+        "blood_analysis_test",
+        "surgery"
+      ],
+      "change_id": "r4_c3"
     }
   ]
 }

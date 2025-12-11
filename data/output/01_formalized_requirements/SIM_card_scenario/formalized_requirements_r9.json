@@ -5,7 +5,7 @@
       "and": [
         {
           "dimension": "control_flow",
-          "compliance_pattern": "activity_completed",
+          "compliance_pattern": "existence_of_A",
           "activities": [
             "receive_customer_personal_information"
           ]
@@ -19,9 +19,10 @@
         "modality": "obligation",
         "action": {
           "dimension": "control_flow",
-          "compliance_pattern": "activity_completed",
+          "compliance_pattern": "A_followed_by_B",
           "activities": [
-            "verify_customer_personal_information_correctness"
+            "receive_customer_personal_information",
+            "verify_customer_personal_information"
           ]
         }
       }

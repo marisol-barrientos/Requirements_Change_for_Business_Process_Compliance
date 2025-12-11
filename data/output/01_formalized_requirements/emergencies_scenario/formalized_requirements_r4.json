@@ -5,10 +5,9 @@
       "and": [
         {
           "dimension": "control_flow",
-          "compliance_pattern": "before",
+          "compliance_pattern": "existence_of_A",
           "activities": [
-            "surgery",
-            "blood_analysis"
+            "surgery"
           ]
         }
       ],
@@ -20,10 +19,10 @@
         "modality": "obligation",
         "action": {
           "dimension": "control_flow",
-          "compliance_pattern": "before",
+          "compliance_pattern": "A_precedes_B",
           "activities": [
-            "surgery",
-            "blood_analysis"
+            "blood_analysis",
+            "surgery"
           ]
         }
       }
@@ -43,9 +42,9 @@
       "not": [
         {
           "dimension": "control_flow",
-          "compliance_pattern": "activity_performed",
+          "compliance_pattern": "existence_of_A",
           "activities": [
-            "doctor_authorize_skipping_blood_analysis"
+            "doctor_authorize_skip_blood_analysis"
           ]
         }
       ]
@@ -55,9 +54,9 @@
         "modality": "obligation",
         "action": {
           "dimension": "control_flow",
-          "compliance_pattern": "activity_precedes",
+          "compliance_pattern": "A_precedes_B",
           "activities": [
-            "blood_analysis",
+            "blood_analysis_test",
             "surgery"
           ]
         }

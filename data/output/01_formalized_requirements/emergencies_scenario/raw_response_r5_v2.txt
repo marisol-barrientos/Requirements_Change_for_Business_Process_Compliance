@@ -1,0 +1,3 @@
+{
+  "response": "No response (exception before LLM call)"
+}

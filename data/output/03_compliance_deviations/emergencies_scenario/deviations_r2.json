@@ -6,12 +6,57 @@
     "deviations": [
       {
         "deviation_id": "r2_d1",
-        "deviation_type": "non-compliance",
-        "description": "The updated requirement in Version 2 obligates the doctor, rather than the nurse, to conduct the time out procedure after obtaining patient consent. The process model on page 1 shows that the nurse performs the time out procedure, not the doctor. This directly violates the stricter requirement introduced in Version 2.",
+        "deviation_type": "no impact",
+        "description": "The change modifies the control flow norm from 'obtain_patient_consent' precedes 'conduct_time_out_procedure' to 'obtain_patient_consent' precedes 'surgical_intervention', but the process model already enforces that patient consent precedes surgical intervention.",
         "process_model_reference": [
-          "time out procedure"
+          "Ask Patient for Consent, Surgical Intervention"
         ],
         "change_id": "r2_c1"
+      },
+      {
+        "deviation_id": "r2_d2",
+        "deviation_type": "non-compliance",
+        "description": "The new norm introduces a resource constraint requiring that 'obtain_patient_consent' is performed by a nurse. The process model assigns 'Ask Patient for Consent' to the Nurse lane, but the original requirement did not specify this, so this is a stricter requirement not previously enforced.",
+        "process_model_reference": [
+          "Ask Patient for Consent"
+        ],
+        "change_id": "r2_c2"
+      },
+      {
+        "deviation_id": "r2_d3",
+        "deviation_type": "no impact",
+        "description": "The change modifies the activities in the norm to only 'obtain_patient_consent', which matches the process model's activity 'Ask Patient for Consent'.",
+        "process_model_reference": [
+          "Ask Patient for Consent"
+        ],
+        "change_id": "r2_c3"
+      },
+      {
+        "deviation_id": "r2_d4",
+        "deviation_type": "no impact",
+        "description": "The addition of the resource 'nurse' to the 'obtain_patient_consent' activity matches the process model, which assigns this task to the Nurse lane.",
+        "process_model_reference": [
+          "Ask Patient for Consent"
+        ],
+        "change_id": "r2_c4"
+      },
+      {
+        "deviation_id": "r2_d5",
+        "deviation_type": "non-compliance",
+        "description": "The new control flow norm requires that 'obtain_patient_consent' is followed by 'time_out_procedure'. The process model has 'Ask Patient for Consent' followed by 'Perform Time Out', but the resource assignment for 'Perform Time Out' does not match the new requirement.",
+        "process_model_reference": [
+          "Ask Patient for Consent, Perform Time Out"
+        ],
+        "change_id": "r2_c5"
+      },
+      {
+        "deviation_id": "r2_d6",
+        "deviation_type": "non-compliance",
+        "description": "The new resource norm requires that 'time_out_procedure' is performed by a doctor. The process model assigns 'Perform Time Out' to the Nurse lane, resulting in a violation of the stricter requirement.",
+        "process_model_reference": [
+          "Perform Time Out"
+        ],
+        "change_id": "r2_c6"
       }
     ]
   }

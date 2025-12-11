@@ -1,39 +1,42 @@
 {
   "requirement_id": "r7",
-  "from_version": "1",
-  "to_version": "2",
+  "from_version": 1,
+  "to_version": 2,
   "changes": [
-    {
-      "change": "delete",
-      "element": "action",
-      "old": {
-        "dimension": "control_flow",
-        "compliance_pattern": "activity_completed",
-        "activities": [
-          "prepare_patient"
-        ]
+    [
+      "r7_c1",
+      "compliance",
+      {
+        "from": null,
+        "to": {
+          "id": "r7_2",
+          "precondition": {
+            "and": [],
+            "or": [],
+            "not": []
+          },
+          "norms": [
+            {
+              "modality": "obligation",
+              "action": {
+                "dimension": "control_flow",
+                "compliance_pattern": "patient_preparation_precedes_anesthesia",
+                "activities": [
+                  "patient_preparation",
+                  "anesthesia"
+                ]
+              }
+            }
+          ],
+          "temporal_validity": {
+            "start": "0000-01-01T00:00:00Z",
+            "end": "9999-12-31T23:59:59Z"
+          },
+          "input_id": "r7",
+          "input_version": "2"
+        }
       },
-      "change_id": "r7_c1"
-    },
-    {
-      "change": "switch_compliance_pattern",
-      "element": "compliance_pattern",
-      "old": "immediate_successor",
-      "new": "eventually_follows",
-      "change_id": "r7_c2"
-    },
-    {
-      "change": "modify_activities",
-      "element": "activities",
-      "old": [
-        "prepare_patient",
-        "apply_anesthesia"
-      ],
-      "new": [
-        "patient_preparation",
-        "anesthesia"
-      ],
-      "change_id": "r7_c3"
-    }
+      "added"
+    ]
   ]
 }

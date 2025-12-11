@@ -11,12 +11,9 @@
         "modality": "obligation",
         "action": {
           "dimension": "control_flow",
-          "compliance_pattern": "activity_performed_for_all_resources",
+          "compliance_pattern": "existence_of_A",
           "activities": [
             "collect_blood_sample"
-          ],
-          "resources": [
-            "patient"
           ]
         }
       }
@@ -53,7 +50,7 @@
         "modality": "obligation",
         "action": {
           "dimension": "control_flow",
-          "compliance_pattern": "activity_execution",
+          "compliance_pattern": "existence_of_A",
           "activities": [
             "collect_blood_sample"
           ]

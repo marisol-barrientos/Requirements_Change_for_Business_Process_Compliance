@@ -7,56 +7,38 @@
       {
         "deviation_id": "r8_d1",
         "deviation_type": "non-compliance",
-        "description": "The process model does not include any activity or gateway that terminates the phone company process if it exceeds 30 days. The new requirement introduces an obligation to terminate the process after 30 days, which is not enforced in the current process.",
+        "description": "The modality changed from permission to obligation, introducing a mandatory requirement to terminate the process if it takes more than 30 days. The process model does not contain any activity or event named 'terminate_process', so this obligation is not fulfilled.",
         "process_model_reference": [
-          "entire phone company process (all activities after 30 days, including 'Send SIM card')"
+          "Phone company process"
         ],
         "change_id": "r8_c1"
       },
       {
         "deviation_id": "r8_d2",
         "deviation_type": "non-compliance",
-        "description": "The modality has changed from permission to obligation, requiring the process to terminate if it exceeds 30 days. The process model allows the process to continue beyond 30 days without termination, directly violating the new obligation.",
+        "description": "The compliance pattern changed from a duration constraint on 'send_SIM_card' to an existence obligation for 'terminate_process' after 30 days. The process model only includes the 'Send SIM card' task and does not include any 'terminate_process' activity, resulting in a violation of the new requirement.",
         "process_model_reference": [
-          "entire phone company process (all activities after 30 days, including 'Send SIM card')"
+          "Send SIM card"
         ],
         "change_id": "r8_c2"
       },
       {
         "deviation_id": "r8_d3",
         "deviation_type": "non-compliance",
-        "description": "The compliance pattern now requires the execution of a termination activity when the process duration exceeds 30 days. The process model does not contain any such termination activity, resulting in a violation.",
+        "description": "The dimension changed from 'time' (duration of sending SIM card) to 'control_flow' (existence of a termination activity). The process model does not implement any control flow for process termination after 30 days, violating the new control flow requirement.",
         "process_model_reference": [
-          "entire phone company process (all activities after 30 days, including 'Send SIM card')"
+          "Phone company process"
         ],
         "change_id": "r8_c3"
       },
       {
         "deviation_id": "r8_d4",
         "deviation_type": "non-compliance",
-        "description": "The dimension has shifted from time to control flow, obligating a specific control flow action (termination) that is not present in the process model.",
+        "description": "The required activity changed from 'send_SIM_card' to 'terminate_process'. The process model does not contain any activity named 'terminate_process', so the new requirement is not met.",
         "process_model_reference": [
-          "entire phone company process (all activities after 30 days, including 'Send SIM card')"
+          "Phone company process"
         ],
         "change_id": "r8_c4"
-      },
-      {
-        "deviation_id": "r8_d5",
-        "deviation_type": "non-compliance",
-        "description": "The required activity has changed from sending the SIM card after 30 days to terminating the process after 30 days. The process model continues with normal activities instead of terminating, violating the new requirement.",
-        "process_model_reference": [
-          "entire phone company process (all activities after 30 days, including 'Send SIM card')"
-        ],
-        "change_id": "r8_c5"
-      },
-      {
-        "deviation_id": "r8_d6",
-        "deviation_type": "no impact",
-        "description": "The temporal constraint modification is a consequence of the change in compliance pattern and activity; the new requirement is already captured by the previous changes.",
-        "process_model_reference": [
-          "none"
-        ],
-        "change_id": "r8_c6"
       }
     ]
   }

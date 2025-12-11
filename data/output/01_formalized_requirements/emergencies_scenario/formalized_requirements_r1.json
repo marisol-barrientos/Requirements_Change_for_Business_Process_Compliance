@@ -5,18 +5,18 @@
       "and": [
         {
           "dimension": "control_flow",
-          "compliance_pattern": "activity_executed",
+          "compliance_pattern": "existence_of_A",
           "activities": [
             "administer_local_anesthesia"
           ]
         },
         {
           "dimension": "data",
-          "compliance_pattern": "data_equals",
+          "compliance_pattern": "data_in_domain",
           "data_values": [
             {
               "element": "patient_anesthesia_tolerance",
-              "value": [
+              "domain": [
                 "high"
               ]
             }
@@ -31,13 +31,13 @@
         "modality": "obligation",
         "action": {
           "dimension": "control_flow",
-          "compliance_pattern": "activity_repeated_within_interval",
+          "compliance_pattern": "existence_of_A",
           "activities": [
             "ask_patient_about_pain"
           ],
           "temporal_constraints": [
             {
-              "interval_minutes": 20
+              "periodicity_minutes": 20
             }
           ]
         }
@@ -56,18 +56,18 @@
       "and": [
         {
           "dimension": "control_flow",
-          "compliance_pattern": "activity_executed",
+          "compliance_pattern": "existence_of_A",
           "activities": [
             "administer_local_anesthesia"
           ]
         },
         {
           "dimension": "data",
-          "compliance_pattern": "data_equals",
+          "compliance_pattern": "data_in_domain",
           "data_values": [
             {
               "element": "patient_anesthesia_tolerance",
-              "value": [
+              "domain": [
                 "high"
               ]
             }
@@ -82,13 +82,13 @@
         "modality": "obligation",
         "action": {
           "dimension": "control_flow",
-          "compliance_pattern": "activity_repeated_within_interval",
+          "compliance_pattern": "existence_of_A",
           "activities": [
             "administer_additional_anesthesia"
           ],
           "temporal_constraints": [
             {
-              "interval_minutes": 20
+              "periodicity_minutes": 20
             }
           ]
         }

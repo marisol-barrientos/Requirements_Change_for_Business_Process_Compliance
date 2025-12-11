@@ -7,9 +7,9 @@
       {
         "deviation_id": "r1_d1",
         "deviation_type": "non-compliance",
-        "description": "The updated requirement in Version 2 obligates the process to administer additional anesthesia every 20 minutes for patients with high anesthesia tolerance who received local anesthesia. The process model, as shown in the diagram on page 1, only requires asking the patient about pain every 20 minutes and does not include the repeated administration of additional anesthesia. This results in a direct violation of the new, stricter requirement.",
+        "description": "The requirement in Version 2 introduces an obligation to 'administer additional anesthesia every 20 minutes' for patients with high anesthesia tolerance after local anesthesia is administered. The BPMN process model only includes the activity 'Ask Patient About Pain Level' every 20 minutes and does not contain any activity for administering additional anesthesia at this interval. Therefore, the process does not fulfill the new, stricter requirement.",
         "process_model_reference": [
-          "administer_additional_anesthesia"
+          "Ask Patient About Pain Level"
         ],
         "change_id": "r1_c1"
       }

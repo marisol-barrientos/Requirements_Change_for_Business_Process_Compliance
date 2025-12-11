@@ -11,10 +11,10 @@
         "modality": "obligation",
         "action": {
           "dimension": "control_flow",
-          "compliance_pattern": "precedence",
+          "compliance_pattern": "A_precedes_B",
           "activities": [
             "obtain_patient_consent",
-            "surgical_intervention"
+            "conduct_time_out_procedure"
           ]
         }
       },
@@ -22,10 +22,10 @@
         "modality": "obligation",
         "action": {
           "dimension": "control_flow",
-          "compliance_pattern": "response",
+          "compliance_pattern": "A_precedes_B",
           "activities": [
             "obtain_patient_consent",
-            "conduct_time_out_procedure"
+            "surgical_intervention"
           ]
         }
       }
@@ -49,7 +49,7 @@
         "modality": "obligation",
         "action": {
           "dimension": "control_flow",
-          "compliance_pattern": "precedence",
+          "compliance_pattern": "A_precedes_B",
           "activities": [
             "obtain_patient_consent",
             "surgical_intervention"
@@ -59,11 +59,37 @@
       {
         "modality": "obligation",
         "action": {
+          "dimension": "resource",
+          "compliance_pattern": "performed_by",
+          "activities": [
+            "obtain_patient_consent"
+          ],
+          "resources": [
+            "nurse"
+          ]
+        }
+      },
+      {
+        "modality": "obligation",
+        "action": {
           "dimension": "control_flow",
-          "compliance_pattern": "response",
+          "compliance_pattern": "A_followed_by_B",
           "activities": [
             "obtain_patient_consent",
-            "doctor_time_out_procedure"
+            "time_out_procedure"
+          ]
+        }
+      },
+      {
+        "modality": "obligation",
+        "action": {
+          "dimension": "resource",
+          "compliance_pattern": "performed_by",
+          "activities": [
+            "time_out_procedure"
+          ],
+          "resources": [
+            "doctor"
           ]
         }
       }

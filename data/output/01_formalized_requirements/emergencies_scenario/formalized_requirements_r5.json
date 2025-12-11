@@ -11,9 +11,19 @@
         "modality": "obligation",
         "action": {
           "dimension": "control_flow",
-          "compliance_pattern": "precedence",
+          "compliance_pattern": "A_precedes_B",
           "activities": [
             "physical examination",
+            "diagnosis"
+          ]
+        }
+      },
+      {
+        "modality": "obligation",
+        "action": {
+          "dimension": "control_flow",
+          "compliance_pattern": "A_precedes_B",
+          "activities": [
             "blood test",
             "diagnosis"
           ]
@@ -32,29 +42,14 @@
     "precondition": {
       "and": [],
       "or": [],
-      "not": [
-        {
-          "dimension": "control_flow",
-          "compliance_pattern": "activity_performed",
-          "activities": [
-            "physical examination"
-          ]
-        },
-        {
-          "dimension": "control_flow",
-          "compliance_pattern": "activity_performed",
-          "activities": [
-            "blood test"
-          ]
-        }
-      ]
+      "not": []
     },
     "norms": [
       {
         "modality": "permission",
         "action": {
           "dimension": "control_flow",
-          "compliance_pattern": "activity_performed",
+          "compliance_pattern": "existence_of_A",
           "activities": [
             "diagnosis"
           ]
