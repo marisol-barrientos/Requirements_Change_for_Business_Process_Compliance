@@ -63,3 +63,9 @@ results = pd.DataFrame(rows, columns=["level", "TP", "FP", "FN", "precision", "r
 
 print("\n=== METRICS PER LEVEL ===")
 print(results.to_string(index=False))
+
+output_path = "/evaluation/analysis_of_results/analyzed/analysis_results_step_2_by_level.xlsx"
+
+results.to_excel(output_path, index=False)
+
+print(f"\nSaved metrics to: {output_path}")
