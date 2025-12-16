@@ -48,4 +48,4 @@ def quick_json_analysis(filename):
 
 
 # Usage
-quick_json_analysis("/home/marisolbarrientosmoreno/Desktop/ER_2025/repo/Requirements_Change_for_Business_Process_Compliance/ground_truth_sum_analysis_results/step_3_baseline.json")
+quick_json_analysis("")

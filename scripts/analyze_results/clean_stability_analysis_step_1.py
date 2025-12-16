@@ -56,7 +56,7 @@ def export_matrices_to_excel(folder_path, output_path):
 
 # === USAGE ===
 if __name__ == "__main__":
-    folder_path = "/home/marisolbarrientosmoreno/Desktop/ER_2025/repo/Requirements_Change_for_Business_Process_Compliance/notebooks/stability_step_1"  # 🔁 Replace with your actual folder
+    folder_path = ""  # 🔁 Replace with your actual folder
     output_excel = "multi_matrix_summary.xlsx"
 
     if not os.path.exists(folder_path):

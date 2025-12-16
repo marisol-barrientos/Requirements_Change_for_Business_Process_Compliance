@@ -24,5 +24,5 @@ for filename in os.listdir(folder_path):
 
 # print results
 print("Deviation type counts:")
-for dtype in ["non-compliance", "over-compliance", "no impact", "ambiguous"]:
+for dtype in ["non-compliance", "over-compliance", "no impact"]:
     print(f"{dtype}: {deviation_counts[dtype]}")

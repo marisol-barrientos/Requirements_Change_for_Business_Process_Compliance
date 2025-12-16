@@ -3,7 +3,7 @@ from collections import Counter
 import pandas as pd
 
 # Load the JSON data
-with open('/home/marisolbarrientosmoreno/Desktop/ER_2025/repo/Requirements_Change_for_Business_Process_Compliance/ground_truth_sum_analysis_results/step_1_baseline.json', 'r', encoding='utf-8') as f:
+with open('', 'r', encoding='utf-8') as f:
     data = json.load(f)
 
 

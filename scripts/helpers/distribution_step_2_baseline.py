@@ -2,7 +2,7 @@ import json
 from collections import Counter
 
 # Read the JSON file
-with open('/home/marisolbarrientosmoreno/Desktop/ER_2025/repo/Requirements_Change_for_Business_Process_Compliance/ground_truth_sum_analysis_results/step_2_baseline.json', 'r', encoding='utf-8') as f:
+with open('', 'r', encoding='utf-8') as f:
     data = json.load(f)
 
 print("=" * 60)

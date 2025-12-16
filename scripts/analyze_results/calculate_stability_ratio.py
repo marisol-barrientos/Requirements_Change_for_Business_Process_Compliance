@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 # === CONFIG ===
-EXCEL_FILE = "/home/marisolbarrientosmoreno/Desktop/ER_2025/repo/Requirements_Change_for_Business_Process_Compliance/scripts/multi_matrix_summary.xlsx"
+EXCEL_FILE = ""
 
 # === FUNCTIONS FOR METRICS ===
 def consistency_index(matrix):

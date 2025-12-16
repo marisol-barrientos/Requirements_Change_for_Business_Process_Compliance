@@ -4,7 +4,7 @@ import numpy as np
 from collections import defaultdict
 
 # === Step 1: Load data from Excel file ===
-file_path = "/home/marisolbarrientosmoreno/Desktop/ER_2025/repo/Requirements_Change_for_Business_Process_Compliance/evaluation/analysis_of_results/to_analyze/results_step_3.xlsx"
+file_path = ""
 df = pd.read_excel(file_path)
 
 # === Step 2: Extract TP, FP, FN from string format ===
@@ -91,7 +91,7 @@ agg_per_scenario_field.fillna({'precision_cv': 0.0, 'recall_cv': 0.0, 'f1_cv': 0
 
 
 # === Step 10: Save to Excel ===
-output_file = "/home/marisolbarrientosmoreno/Desktop/ER_2025/repo/Requirements_Change_for_Business_Process_Compliance/evaluation/analysis_of_results/analyzed/analyzed_results_step_3_corrected.xlsx"
+output_file = ""
 
 with pd.ExcelWriter(output_file, engine='openpyxl') as writer:
     metrics_per_exec_field.to_excel(writer, sheet_name="Per Exec Per Field", index=False)

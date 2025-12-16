@@ -64,7 +64,7 @@ results = pd.DataFrame(rows, columns=["level", "TP", "FP", "FN", "precision", "r
 print("\n=== METRICS PER LEVEL ===")
 print(results.to_string(index=False))
 
-output_path = "/home/marisolbarrientosmoreno/Desktop/ER_2025/repo/Requirements_Change_for_Business_Process_Compliance/evaluation/analysis_of_results/analyzed/analysis_results_step_2_by_scenario.xlsx"
+output_path = ""
 
 results.to_excel(output_path, index=False)
 
