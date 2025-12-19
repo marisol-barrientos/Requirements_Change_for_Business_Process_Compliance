@@ -1,45 +1,135 @@
 # Requirements Change for Business Process Compliance (RC4PC)
-Impact Analysis of Regulatory Requirement Changes on Business Process Compliance
 
+**Impact Analysis of Regulatory Requirement Changes on Business Process Compliance**
 
-**RC4PC** is a research prototype for analyzing the **impact of changes in regulatory requirements on business process compliance**. It provides a three-step pipeline that leverages AI-assisted analysis (via GPT-4.1) and scripted logic to identify and assess changes and their implications on process compliance.
+**RC4PC** is a research prototype for analyzing the **impact of changes in regulatory requirements on business process compliance**.  
+It implements a **three-step analysis pipeline** that combines AI-assisted analysis and algorithmic change detection to (i) formalize regulatory requirements, (ii) identify atomic requirement changes, and (iii) assess their impact on business process compliance.
 
-This repository accompanies the experiments and figures presented in the related research paper.
+This repository accompanies the experiments, analyses, and figures presented in the associated research paper.
 
 ---
+
+## Overview of the RC4PC Pipeline
+
+The RC4PC approach consists of three main steps:
+
+1. **Requirement Formalization**  
+   Natural-language regulatory requirements are transformed into a structured, machine-interpretable representation using an LLM.
+
+2. **Atomic Change Detection**  
+   Fine-grained (atomic) changes between two versions of a requirement are identified using a dedicated change analysis algorithm.
+
+3. **Compliance Impact Analysis**  
+   The detected requirement changes are analyzed to assess their impact on business process compliance.
+
+The pipeline is executed iteratively across **multiple datasets and multiple runs** to study result stability.
+
+---
+
 
 ## Repository Structure
 
 ```
-├── data/          # Input regulatory texts and output results
-├── notebooks/     # Jupyter notebooks implementing the 3-step pipeline
-├── scripts/       # Core scripts for change detection and evaluation
-├── figures/       # Figures generated for the paper
+├── config/        # Configuration files (e.g., API keys)
+├── data/          # Input data and outputs for all pipeline steps
+├── evaluation/    # Ground truth, baselines, stability analysis, and expert comparisons
+├── figures/       # Figures used in the paper
+├── notebooks/     # Jupyter notebooks to run the pipeline and analyses
+├── scripts/       # Core algorithms and analysis scripts
 ├── environment.yml
-├── config/         # Contains api_keys.json
-├── ground_truth_sum_analysis_results/ # Includes an Excel sheet summarizing the ground truth and analyzing the results
 ```
 
-### 1. `data/`
-Contains both input and output data:
-- Raw compliance requirements (old and new versions)
-- Intermediate outputs from each pipeline step (i.e., step 1 and 2)
-- Final impact analysis results (i.e., step 3)
+---
 
-### 2. `notebooks/`
-Contains a Jupyter notebooks that implement the RC4PC pipeline:
-- **Step 1:** Automatically formalizes compliance requirements provided in natural language text (calls OpenAI GPT-4.1)
-- **Step 2:** Compute atomic change operations (calls script from `scripts/`)
-- **Step 3:** Assess impact on compliance (calls OpenAI GPT-4.1 again)
+## Folder Description
 
-### 3. `scripts/`
-Includes Python scripts to:
-- Identify atomic change operations between old and new versions of a formalized compliance requirement
-- Evaluate the outputs of each step
-- Support additional utility and analysis functions
+### config/
 
-### 4. `figures/`
-All the figures and diagrams included in the paper are stored here.
+Contains configuration files required to run the pipeline:
+- API keys for LLM-based analysis steps
+- Other configuration parameters used by notebooks and scripts
+
+---
+
+### data/
+
+Contains **both input and output data** used throughout the experiments.
+
+- **Input data**
+  - Multiple versions of regulatory requirements
+  - Corresponding business process models
+  - Organized per dataset
+
+- **Output data**
+  - Intermediate results produced by each pipeline step
+  - Final compliance impact analysis results
+  - Stored separately for each dataset and each of the five iterations
+
+This structure supports reproducibility and stability analysis.
+
+---
+
+### evaluation/
+
+Contains all artifacts related to evaluation and comparison, including:
+
+1. **Quantitative result analysis**  
+   Precision, Recall, and F1-score calculations.
+
+2. **Stability analysis of RC4PC**  
+   Analysis of result consistency across multiple iterations.
+
+3. **Ground truth**  
+   Gold-standard annotations used for evaluation.
+
+4. **Baseline comparison**  
+   Results obtained by applying *Winter et al. (2020)* to the same datasets.
+
+5. **Additional evaluation artifacts**
+   - The 9 requirements from *Zasada et al. (2023)* formalized using our requirement representation.
+   - Comparison between:
+     - Annotations produced by two compliance experts
+     - Annotations produced by one of the authors and used as ground truth
+   - Includes:
+     - Instructions provided to the experts
+     - The comparison protocol
+     - The expert annotations
+     - Analysis of results
+
+---
+
+### figures/
+
+Contains all figures and diagrams included in the associated research paper.
+
+---
+
+### notebooks/
+
+Contains Jupyter notebooks used to execute and analyze the RC4PC pipeline:
+
+- **Main pipeline notebook**  
+  Provides an easy-to-use interface for executing:
+  - Step 1: Requirement formalization
+  - Step 2: Atomic change detection
+  - Step 3: Compliance impact analysis
+
+- **Stability analysis notebook**  
+  Used to calculate and analyze the stability of the results for step 1 and step 3 across multiple iterations.
+
+---
+
+### scripts/
+
+Contains Python scripts implementing the core logic of RC4PC:
+
+- Implementation of the **atomic change detection algorithm** (Step 2)
+- Scripts to:
+  - Analyze pipeline outputs
+  - Compute result distributions
+  - Support evaluation and auxiliary analyses
+
+These scripts are invoked by the notebooks and can also be executed independently.
 
 ---
 
@@ -48,24 +138,23 @@ All the figures and diagrams included in the paper are stored here.
 ### 1. Clone the Repository
 
 ```bash
-git clone HERE_ADD_FINAL_REPOSITORY_URL/rc4pc.git
-cd rc4pc
+git clone <REPOSITORY_URL>
 ```
 
 ### 2. Set Up the Environment
 
-Create a virtual environment and install the required packages:
+Create and activate the Conda environment:
 
 ```bash
-conda env create -f environment.yml
+conda env create -n rc4pc -f environment.yml
 conda activate rc4pc
 ```
 
-### 3. Add Your Configuration
+---
 
-#### a. API Keys
+## Configuration
 
-Create a file named `api_keys.json` in the root directory with the following content:
+Create a file `api_keys.json` inside the `config/` folder:
 
 ```json
 {
@@ -73,53 +162,18 @@ Create a file named `api_keys.json` in the root directory with the following con
 }
 ```
 
-> This is required for steps that use OpenAI GPT-4.1.
-
-
-## How to Run the Pipeline
-
-Before starting, make a copy of the folder `data/output_template` and rename it to `data/output`.  
-This folder provides the required structure for saving all test results.  
-Each step is executed in a separate code cell within the Jupyter Notebook `AnalyzeImpactRequirementChangesProcessCompliance.ipynb`.
-
+> Required for pipeline steps that rely on LLM-based analysis.
 
 ---
 
-## Notes
+## Running the Pipeline
 
-- OpenAI API usage may incur costs. Use with caution and monitor your usage.
-- All intermediate and final data artifacts are saved in the `data/` folder.
-- The evaluation results used in the paper are stored in `data/output_to_eval`.
+1. Open the **main Jupyter notebook** in the `notebooks/` folder.
+2. Follow the notebook cells to execute:
+   - Step 1: Requirement formalization
+   - Step 2: Atomic change detection
+   - Step 3: Compliance impact analysis
+3. Outputs are automatically stored in the corresponding subfolders of `data/`.
 
 ---
-
-## Citation
-
-If you use this codebase or results in your work, please cite the associated research paper (TO_COMPLETE). BibTeX will be provided once the paper is published.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
