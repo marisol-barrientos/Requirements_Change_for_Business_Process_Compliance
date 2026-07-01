@@ -1,4 +1,4 @@
-# Requirements Change for Business Process Compliance (RegChanges4BPC)
+# Requirements Change for Business Process Compliance (ReqChanges4BPC)
 
 **Impact Analysis of Regulatory Requirement Changes on Business Process Compliance**
 
