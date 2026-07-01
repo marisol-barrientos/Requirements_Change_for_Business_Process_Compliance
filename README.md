@@ -2,16 +2,16 @@
 
 **Impact Analysis of Regulatory Requirement Changes on Business Process Compliance**
 
-**RegChanges4BPC** is a research prototype for analyzing the **impact of changes in regulatory requirements on business process compliance**.  
+**ReqChanges4BPC** is a research prototype for analyzing the **impact of changes in regulatory requirements on business process compliance**.  
 It implements a **three-step analysis pipeline** that combines AI-assisted analysis and algorithmic change detection to (i) formalize regulatory requirements, (ii) identify atomic requirement changes, and (iii) assess their impact on business process compliance.
 
 This repository accompanies the experiments, analyses, and figures presented in the associated research paper.
 
 ---
 
-## Overview of the RegChanges4BPC Pipeline
+## Overview of the ReqChanges4BPC Pipeline
 
-The RegChanges4BPC approach consists of three main steps:
+The ReqChanges4BPC approach consists of three main steps:
 
 1. **Requirement Formalization**  
    Natural-language regulatory requirements are transformed into a structured, machine-interpretable representation using an LLM.
@@ -76,7 +76,7 @@ Contains all artifacts related to evaluation and comparison, including:
 1. **Quantitative result analysis**  
    Precision, Recall, and F1-score calculations.
 
-2. **Stability analysis of RegChanges4BPC**  
+2. **Stability analysis of ReqChanges4BPC**  
    Analysis of result consistency across multiple iterations.
 
 3. **Ground truth**  
@@ -106,7 +106,7 @@ Contains all figures and diagrams included in the associated research paper.
 
 ### notebooks/
 
-Contains Jupyter notebooks used to execute and analyze the RegChanges4BPC pipeline:
+Contains Jupyter notebooks used to execute and analyze the ReqChanges4BPC pipeline:
 
 - **Main pipeline notebook**  
   Provides an easy-to-use interface for executing:
@@ -121,7 +121,7 @@ Contains Jupyter notebooks used to execute and analyze the RegChanges4BPC pipeli
 
 ### scripts/
 
-Contains Python scripts implementing the core logic of RegChanges4BPC:
+Contains Python scripts implementing the core logic of ReqChanges4BPC:
 
 - Implementation of the **atomic change detection algorithm** (Step 2)
 - Scripts to:
